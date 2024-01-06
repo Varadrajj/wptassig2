@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function f1() {
+            console.log("opt called");
+            let x = parseInt(document.getElementById("1").value)
+            let y = parseInt(document.getElementById("2").value)
+            let Operation = document.getElementById("op").value
+
+            let result
+            switch(Operation)
+           { case "+" : result = x+y;break;
+             case "-" : result = x-y;break;   
+             case "*" : result = x*y;break;
+             case "/" : result = x/y;break;
+             case "%" : result = x%y;break;
+           }
+
+           let ot = `<i> ${x} ${Operation} ${y} = ${result} <i>`
+            document.getElementById("3").innerHTML = ot
+        } 
+    </script>
+</head>
+<body>
+    Enter no.:<input type="number" value="0" id="1"/>
+    Enter no.:<input type="number" value="0" id="2"/>
+    Operation : <select id="op" onchange="f1()">
+        <option>Select</option>
+        <option>+</option>
+        <option>-</option>
+        <option>*</option>
+        <option>/</option>
+        <option>%</option>
+    </select>
+    <p>
+        Result : 
+        <span id="3"></span>
+    </p>
+</body>
+</html>

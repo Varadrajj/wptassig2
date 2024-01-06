@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CurrencyConverter</title>
+    <script>
+        function calculate(){
+            let y = parseInt(document.getElementById("n1").value)
+            let op = document.getElementById("operation").value
+            let result 
+            switch(op)
+            {
+                case 'Rupee' : resul=y; break; 
+                case 'Yen' : resul=y; break;
+                case 'Euro' : resul=y; break;
+                case 'Pound' : result= 0.0095*y; break;
+            }
+            console.log(result)
+            let outputstr = `<i> ${result} </i>`
+            document.getElementById("sp1").innerHTML = outputstr
+        }
+    </script>
+</head>
+<body>
+    
+        <fieldset>
+        <legend><b><h2>CurrencyConverter</h2></b></legend>
+        
+        <p>   
+            <pre>
+                Value : <input id="n1" type="number" value="0" />
+            </pre>
+            
+        From:<select>
+                <option>select</option>
+                <option value = "Rupee">Rupee</option>
+                <option>Yen</option>
+                <option>Euro</option>
+                <option value = "Pound">Pound </option>
+                </select>  
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                
+        To  :<select id="operation" >
+                <option>select</option>
+                <option value = "Rupee">Rupee</option>
+                <option>Yen</option>
+                <option>Euro</option>
+                <option value = "Pound">Pound </option>
+                </select>
+                <br>
+                <div align =center>       
+                    <input type="button" value="Submit" onclick="calculate()" />
+                    <input type="button" value="Reset"  />
+                </div>
+
+                <p>The result is <span id="sp1"></span></p>
+        </p>
+        </fieldset>
+    
+    
+</body>
+</html>
